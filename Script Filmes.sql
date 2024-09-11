@@ -1,7 +1,50 @@
+--Consultas feitas por Ngombo Manuel 11-09-2024
+--Desafio Concluído!!!
 
 
+--Primeira consulta
+SELECT Nome, Ano FROM Filmes;
+
+--Segunda consulta
+SELECT Nome, Ano, Duracao FROM Filmes ORDER BY Ano;
+
+--Terceira consulta
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Nome LIKE '%futuro';
+
+--Quarta consulta
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Ano = 1997;
+
+--Quinta consulta
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Ano > 2000;
+
+--Sexta consulta
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Duracao > 100 AND Duracao < 150 ORDER BY Duracao;
+
+--Sétima consulta-Pendente
+SELECT Ano, COUNT(*) FROM Filmes WHERE Ano <> '' GROUP BY Ano ORDER BY Duracao DESC;
+
+--Oitava consulta
+SELECT * FROM Atores WHERE Genero LIKE 'M';
 
 
+--Nona consulta
+SELECT * FROM Atores WHERE Genero LIKE 'F' ORDER BY PrimeiroNome;
+
+
+--Decima consulta
+SELECT Nome, Genero FROM  FilmesGenero 
+INNER JOIN Filmes ON Filmes.Id = FilmesGenero.IdFilme
+INNER JOIN Generos ON Generos.Id = FilmesGenero.IdGenero;
+
+--Decima Primeira consulta  --Pendente
+SELECT Nome, Genero FROM  FilmesGenero 
+INNER JOIN Filmes ON Filmes.Id = FilmesGenero.IdFilme
+INNER JOIN Generos ON Generos.Id = FilmesGenero.IdGenero WHERE Genero LIKE 'Mi%';
+
+--Decima Segunda consulta  --Pendente
+SELECT Nome, PrimeiroNome, UltimoNome, Papel FROM  ElencoFilme 
+INNER JOIN Filmes ON Filmes.Id = ElencoFilme.IdFilme
+INNER JOIN Atores ON Atores.Id = ElencoFilme.IdAtor
 
 
 
